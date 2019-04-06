@@ -11,4 +11,6 @@ package aplicação;
  */
 public interface Hashable {
     int hash(int tamanho);
+    public String getNomeesobrenome();
+    public String getMatricula();
 }

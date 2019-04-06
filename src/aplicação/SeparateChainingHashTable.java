@@ -62,4 +62,22 @@ public class SeparateChainingHashTable {
         }
         return true;
     }
+    
+    public void printTable(){
+        System.out.print("===== TABLE SIZE = ");
+        System.out.print(listasencadeadas.length);
+        System.out.println(" =====");
+        System.out.println("Key | Matrícula | Nome");
+        for(int i=0;i<listasencadeadas.length;i++){
+            LinkedList<Hashable> listaencadeada = listasencadeadas[i];
+            for (Hashable elemento : listaencadeada) {  
+                System.out.print(elemento.hash(listasencadeadas.length));
+                System.out.print(" | ");
+                System.out.print(elemento.getMatricula());
+                System.out.print(" | ");
+                System.out.println(elemento.getNomeesobrenome());
+            }
+        }
+        System.out.println("===========================");
+    }
 }

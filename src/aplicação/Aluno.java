@@ -29,7 +29,9 @@ public class Aluno implements Hashable {
      */
     @Override
     public int hash(int tamanho){
-        return matricula.hashCode()%tamanho;
+        int calculohash = matricula.hashCode()%tamanho;
+        if(calculohash < 0) calculohash += tamanho;
+        return calculohash;
     }
     
     @Override
@@ -38,10 +40,12 @@ public class Aluno implements Hashable {
     }
     
     //Getters
+    @Override
     public String getNomeesobrenome(){
         return nomeesobrenome;
     }
     
+    @Override
     public String getMatricula(){
         return matricula;
     }
