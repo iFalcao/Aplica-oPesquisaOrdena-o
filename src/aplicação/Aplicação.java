@@ -16,14 +16,17 @@ public class Aplicação {
         //tamanhos da tabela para fator de carga 1, 2, 5 e 10
         int[] tamanhos = {100,50,20,10};
         for(int i=0;i<tamanhos.length;i++){
+            //Instancia objeto para a tabela
             SeparateChainingHashTable scht = new SeparateChainingHashTable(tamanhos[i]);
             try (BufferedReader br = new BufferedReader(new FileReader("./src/resource/entrada.CSV"))) {
                 String line;
                 while ((line = br.readLine()) != null) {
+                    //Insere objeto Aluno na tabela
                     String[] values = line.split(",");
                     scht.insert(new Aluno(values[0],values[1]));
                 }
             }
+            //Imprime tabela
             scht.printTable();
         }
     }
