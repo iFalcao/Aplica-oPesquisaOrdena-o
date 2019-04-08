@@ -18,6 +18,7 @@ public class Aplicação {
         for(int i=0;i<tamanhos.length;i++){
             //Instancia objeto para a tabela
             SeparateChainingHashTable scht = new SeparateChainingHashTable(tamanhos[i]);
+            //Lê arquivo CSV
             try (BufferedReader br = new BufferedReader(new FileReader("./src/resource/entrada.CSV"))) {
                 String line;
                 while ((line = br.readLine()) != null) {
