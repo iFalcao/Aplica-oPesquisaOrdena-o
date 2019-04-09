@@ -22,11 +22,6 @@ public class Aluno implements Hashable {
         this.matricula = matricula;
     }
     
-    /**
-     *
-     * @param tamanho
-     * @return
-     */
     @Override
     public int hash(int tamanho){
         int calculohash = matricula.hashCode()%tamanho;
